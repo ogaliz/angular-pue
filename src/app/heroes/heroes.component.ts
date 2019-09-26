@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../Hero';
+import { HEROES } from '../mock-heroes';
 
 // Estilos y vistas que pertenecen al componente
 @Component({
@@ -8,15 +9,23 @@ import { Hero } from '../Hero';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-
+  
+  heroes = HEROES;
+  
   hero : Hero = {
     id : 1,
     name : 'Oscar Galvez'
   };
-
+  
   constructor() { }
-
+  
   ngOnInit() {
   }
-
+  
+  selectedHero: Hero;
+  
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+  
 }
