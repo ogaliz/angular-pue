@@ -1,17 +1,6 @@
 <h3>{{ hero.id }} - {{ hero.name | uppercase }}</h3>
 <p>heroes works!</p>
 
-<div *ngIf="selectedHero">
-    
-    <h2>{{selectedHero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{selectedHero.id}}</div>
-    <div>
-        <label>name:
-            <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-        </label>
-    </div>
-    
-</div>
 <h3>Listado de Heroes</h3>
 <ul class="heroes">
     <li *ngFor="let hero of heroes" 
